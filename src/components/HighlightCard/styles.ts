@@ -34,15 +34,15 @@ export const Icon = styled(Feather)<TypeProps>`
     font-size: ${RFValue(40)}px;
 
     ${({type}) => type === 'up' && css`
-        color: ${({theme}) => theme.colors.success}
+        color: ${({theme}) => theme.colors.success};
     `};
 
     ${({ type }) => type === 'down' && css`
-        color: ${({theme}) => theme.colors.attention}
+        color: ${({theme}) => theme.colors.attention};
     `};
 
     ${(props) => props.type === 'total' && css`
-        color: ${({theme}) => theme.colors.shape}
+        color: ${({theme}) => theme.colors.shape};
     `};
 `
 
