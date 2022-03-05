@@ -9,7 +9,6 @@ import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useForm } from "react-hook-form";
 
-import { Input } from "../../components/Form/Input";
 import { InputForm } from "../../components/Form/InputForm";
 import { Button } from "../../components/Form/Button";
 import { TransactionTypeButton } from "../../components/Form/TransactionTypeButton";
@@ -68,7 +67,7 @@ export function Register() {
     setCategoryModalOpen(false)
   }
 
-  function handleRegister(form: FormData){
+  function handleRegister(form: Partial<FormData>){
     if(!transactionType)
       return Alert.alert('Selecione o tipo da transação')
 
@@ -129,7 +128,7 @@ export function Register() {
             />
           </Fields>
 
-          <Button title="Enviar" onPress={handleSubmit => (handleRegister)} />
+          <Button title="Enviar" onPress={handleSubmit(handleRegister)} activeOpacity={0.7}/>
         </Form>
 
         <Modal visible={categoryModalOpen}>
