@@ -5,17 +5,15 @@ import { Container, Title } from './styles'
 interface Props extends RectButtonProps {
   title: string
   onPress: () => void
-  activeOpacity: number
 }
 
 export function Button({
   title, 
   onPress,
-  activeOpacity, 
   ...rest 
 }: Props) {
   return (
-    <Container onPress={onPress} activeOpacity={activeOpacity} {...rest}>
+    <Container onPress={onPress} {...rest}>
       <Title>
         {title}
       </Title>
